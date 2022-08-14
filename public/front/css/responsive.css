@@ -1,0 +1,545 @@
+/**********************Media Query******************/
+@media (min-width: 1200px){
+    .container {
+        max-width: 1140px;
+    }
+    }
+@media (max-width: 1024px) { 
+         .midlecol .midle1, .midlecol .midle2{
+            display: none;
+         }
+        }
+/********************************************************mobile***************************************/
+@media (min-width: 300px) and (max-width: 767px)  { 
+    .black-header .cartIcon.cart-header{
+        display: block;
+        margin-bottom: 0 !important;
+    }
+    .black-header .cartIcon.cart-header i{
+        color: #fff;
+        top: -25px;
+        right: -14px;
+    }
+    .badge-notify{
+        top: -59px;
+        right: 0px;
+    }
+body{
+    overflow-x: hidden;
+}
+img{
+    width: 100%;
+}
+.title{
+    position: relative;
+    font-size: 20px;
+    margin-bottom:13px;
+    }
+/***************************NAvBAr************************/
+.navbar{
+    height: 65px;
+}
+.logo{
+    width:65px;
+    }
+    /*************************************Slider************************/
+    .carousel-inner{
+        height: 200px;
+    }
+.carousel-inner .carousel-caption{
+    top:10%;
+}
+.section{
+    padding:20px 0;
+}
+
+/*for mobile dd*/
+.container {
+    /**/
+    width:100%;
+}
+
+.support{
+    margin-bottom:0;
+}
+.regist{
+    width: 150px;
+    float: left !important;
+    margin-top:7px;
+}
+
+.support li{
+padding-left: 0;
+}
+.socialIcons {
+    margin-right: 0;
+}
+.socialIcons a{
+    margin-left:5px;
+}
+
+.regist a{
+    padding:0 ;
+    margin:0;
+}
+
+.support li:last-child{
+    float: right;
+    padding-right: 5px;
+}
+.title::after,.title::before{
+position: absolute;
+content: '';
+height: 3px;
+width: 70px;
+bottom: 40px;
+top:50%;
+}
+
+        
+ /******************************************************/
+ .about-us .img-col{
+    width: 350px;
+    height: 350px;
+    margin: 20px auto 10px;
+ }
+ 
+ .about-us .title::before{
+     top:85%;
+ }
+ .about-us p{
+    font-size: 12px;
+    line-height: 25px;
+ }
+ .about-us .read-more{
+    text-align: left;
+    padding-right: 20px;
+    padding-top: 0px;
+ }
+ .our-products .title,
+ .Success-Partners .title,
+ .contact-page .title,
+ .image-gellery .title{
+     text-align: right;
+ }
+ .our-products .title::before,
+ .Success-Partners .title::before,
+ .contact-page .title::before,
+.image-gellery .title::before
+ {
+    right: 0;
+    top: 85%;
+    width: 45px;
+}
+.our-products .title::after,
+.Success-Partners .title::after,
+.contact-page .title::after,
+.image-gellery .title::after{
+    display: none;
+}
+.our-products .section-header p{
+    width: 100%;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+.dealsOffer{
+    margin-bottom: 40px;
+}
+.dealsOffer .dealsimg .labelSale{
+    left: -6px;
+}
+.watsapp-order a{
+    margin-top: 22px;
+   
+}
+.blackfooter{
+    margin-top: 20px;
+}
+ /******************************************************/       
+   /*******************Slicknav menu****************/
+.slicknav_menu {
+    display: block;
+    right:5px;
+    bottom: 10px;
+}
+.slicknav_menu ul{
+    position: absolute;
+    width:100%;
+    left:0;
+    top:65px;
+}
+.slicknav_nav ul.dropdown{
+    position: relative;
+top: 0px;
+}
+.slicknav_nav ul.dropdown a:hover{
+color:#1b8af3;
+}
+
+            
+.slicknav_nav a:hover{
+    color:#1b8af3
+}
+.activemobile{
+    color:#1b8af3;
+}
+
+.container {
+    width:100%;
+}
+.herocateg{
+    height: 400px;
+    padding: 10px 15px;
+}
+.overlay{
+    width: 100%;
+    left: 0;
+}
+
+.carousel-caption{
+    top: 50px;
+}
+.carousel-caption h1{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.carousel-caption p{
+    font-size: 14px;
+    line-height: 12px;
+}
+.carousel-control-prev, 
+.carousel-control-next{
+border: 1px solid #fff;
+width: 30px;
+height: 30px;
+visibility: visible;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+    width:15px;
+    height: 15px;
+}
+.slider-section{
+/* margin-top: 48px; */
+}
+
+.carousel-caption{
+top: 1px;
+bottom: -18px;
+}
+.carousel-caption h1{
+font-size: 14px;
+margin-bottom: 10px;
+}
+.carousel-caption p{
+    font-size: 8px;
+}
+.carousel-control-prev, 
+.carousel-control-next{
+border: 1px solid #fff;
+width: 20px;
+height: 20px;
+visibility: visible;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+    width:10px;
+    height: 10px;
+}
+.modal-content{
+    padding: 10px 15px;
+    width: 100%;
+}
+.modal-content.pro-deatails{
+    width: 100%;
+}
+.modal-content .modal-img{
+    margin:10px auto;
+}
+.modal-content .modal-img{
+    height: 230px;
+}
+.modal-content .product-deatails .title-list{
+    font-size: 15px;
+}
+.modal-content.pro-deatails ul li{
+    display: block;
+    width: 100%;
+}
+.modal-content ul li{
+    width: 100%;
+}
+.watsapp-order a{
+    padding:10px;
+    font-size: 15px;
+    width: 90%;
+
+}
+.product-page .item .watsapp-order {
+    width: 90%;
+    
+}
+.product-page .item{
+    margin-bottom: 0px;
+}
+.main-contact-form .orange-bg{
+    position: relative;
+    right: 0;
+    margin-top: 20px;
+    width: 100%;
+}
+.main-contact-form{
+    padding:20px
+}
+.main-contact-form .white-bg,
+.main-contact-form .orange-bg{
+    padding:20px
+}
+.main-contact-form .white-bg h4{
+    font-size: 25px;
+}
+.main-contact-form .white-bg span{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.main-contact-form .orange-bg h4{
+    margin-bottom: 50px;
+}
+.main-contact-form .orange-bg .contact-info-list{
+    padding-right: 0;
+}
+.main-contact-form .orange-bg .contact-info-list li i{
+    margin-left: 10px;
+    font-size: 22px;
+}
+.main-contact-form .orange-bg .contact-info-list li span {
+    font-size: 20px;
+}
+.main-contact-form{
+    margin-bottom: 20px;
+}
+.header-contenent{
+    padding-bottom: 10px;
+}
+.main-contact-form .orange-bg .contact-info-list{
+    margin-bottom: 80px;
+}
+.main-contact-form .orange-bg .social-link{
+    padding-right: 0;
+}
+.company-profile span{
+    width: 100%;
+    font-size: 12px;
+}
+
+}
+        
+/**************************************************ibad-----------------*/
+@media(min-width:768px) and (max-width:1024px){           
+.navbar-header {
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-inner{
+    height: 300px;
+}
+.carousel-inner .carousel-caption{
+    top:10%;
+}
+.carousel-caption h1{
+    font-size: 28px;
+}
+.carousel-caption p{
+    font-size: 15px;
+}
+.support li {
+    padding-left: 10px;
+}
+.support a{
+    font-size: 14px;
+}
+.logo{
+    width: 30%;
+    margin-right: 78%;
+}
+.logo img{
+    width: 85px;
+}
+.mobile-menu{display:none;}
+
+/*Slicknav menu*/
+.slicknav_menu {
+    display: block;
+    position: absolute;
+    right:0px;
+    bottom: 10px;
+    width: 100%;
+}
+.slicknav_menu ul{
+    position: absolute;
+    width:100% !important;
+    left:0;
+    top:62px;
+}
+.navbar-expand-lg .navbar-collapse{
+    display: none !important;
+}
+.section{
+    padding-top: 40px;
+} 
+.about-us .read-more{
+    text-align: left;
+    padding-top: 10px;
+} 
+.about-us .img-col{
+    width: 400px;
+    height: 400px;
+    margin:10px auto;
+}
+.our-products .title::before {
+    right: 35%;
+}
+.Success-Partners .title::before{
+    right: 30%;
+}
+.our-products .title::after{
+    left: 35%;
+}
+.Success-Partners .title::after{
+    left: 30%;
+}
+.our-products .section-header p{
+    width: 95%;
+    margin-bottom: 40px;
+}
+.dealsOffer{
+    height: 470px;
+    margin-bottom: 40px;
+}
+.section.our-products,
+.section.about-us{
+    padding-bottom: 0;
+}
+.Success-Partners .card .card-title h5{
+    font-size: 16px;
+}
+.Success-Partners .card .card-title span{
+    font-size: 14px;
+}
+.Success-Partners .card .card-text {
+    font-size: 12px;
+    line-height: 17px;
+}
+.dealsBox .dealProductInfo h4{
+    font-size: 18px;
+}
+.watsapp-order a{
+    padding: 9px;
+    font-size: 16px;
+    width: 95%;
+    margin: 19px auto;
+}
+.product-page .item .watsapp-order{
+    width: 95%;
+}
+.product-page .item .watsapp-order a{
+    font-size: 16px;
+}
+.product-page .item{
+    margin-bottom: 0;
+}
+.blackfooter{
+    margin-top: 20px;
+}
+.price-box .newPrice{
+    font-size: 14px;
+}
+.price-box .oldPrice{
+    font-size: 14px;
+    margin-right: 170px;
+}
+.main-contact-form .orange-bg{
+    position: relative;
+    right: 0;
+    margin-top: 20px;
+}
+.contact-page .title::before {
+    right: 30%;
+}
+.contact-page .title::after {
+    left: 30%;
+}
+.main-contact-form,
+.main-contact-form .orange-bg{
+    padding: 20px 30px;
+}
+.main-contact-form .orange-bg{
+    padding-top: 35px;
+}
+.main-contact-form .orange-bg .contact-info-list{
+    margin-bottom: 100px;
+    padding-right: 0;
+}
+.main-contact-form .orange-bg .social-link{
+    padding-right: 0;
+}
+.image-gellery .title::before {
+    right: 29%;
+}
+.image-gellery .title::after {
+    left: 29%;
+}
+}
+/***********************Ipad pro*******************************/
+@media(min-width:1024.5px) and (max-width:1300px){
+    .product-page .item .watsapp-order{
+        width: 95%;
+    }
+}
+
+
+/*******************************Larg Secreen******************************/
+
+@media(min-width: 1400px) {
+    .container {
+      width: 1370px !important;
+      min-width: 1370px !important;
+    }
+    .main-contact-form .orange-bg{
+        right: 9%;
+    }
+  }
+
+  @media(min-width: 1600px) {
+    .container {
+      width: 1570px !important;
+      min-width: 1570px !important;
+    }
+}
+
+@media(min-width: 1900px) {
+    .container {
+        width: 1870px;
+          min-width: 1700px !important;
+          padding: 0 50px;
+        }
+        .about-us .img-col{
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+        }
+        .about-us p{
+            font-size: 18px;
+            line-height: 38px;
+        }
+        .dealsBox .dealProductInfo h4{
+            font-size:26px;
+        }
+        .dealsOffer{
+            height: 494px;
+        }
+        .title::before,
+        .title::after{
+            width: 85px;
+        }
+}
