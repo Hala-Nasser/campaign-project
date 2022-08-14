@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="messge">الرسالة</label>
-                                    <textarea class="form-control" id="InputMessage" name="message"></textarea>
+                                    <textarea class="form-control" id="InputMessage" name="message" placeholder="write message here"></textarea>
                                     <span class="text-danger" id="messageErrorMsg"></span>                                
                                 </div>
                 
@@ -152,7 +152,9 @@ $('#SubmitForm').on('submit',function(e){
       success:function(response){
         $('#successMsg').show();
         console.log(response);
-        find("input, textarea").val("");
+        document.getElementById('InputName').value = '';
+        document.getElementById('InputEmail').value = '';
+        document.getElementById('InputMessage').value = '';
       },
       error: function(response) {
         $('#nameErrorMsg').text(response.responseJSON.errors.name);

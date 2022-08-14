@@ -28,7 +28,9 @@
                 </div>
             </div>
 
-            <div class="dealsBox">
+            <div class="dealsBox" style="
+            min-height: auto;
+            margin: 20px auto;">
                 <div class="row">
 
                     @foreach ($products as $product)
@@ -75,7 +77,8 @@
             <div class="more-products">
                 <div class="row">
                     <div class="col-12">
-                        <a href="#">المزيد من المتجات</a>
+                        <a href="#">المزيد من المنتجات</a>
+                    
                     </div>
                 </div>
             </div>

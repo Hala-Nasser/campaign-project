@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="{{asset('front/css/slicknav.css')}}">
 
 
+    @if(app()->getLocale() == 'ar')    
+    <link rel="stylesheet" href="{{asset('front/css/style.css')}}" type="text/css">
+      @else
+      {{-- english style --}}
+      <link rel="stylesheet" href="{{asset('front/css/style.css')}}" type="text/css">
+      @endif
+
+
     @yield('style')
  
 
@@ -109,6 +117,22 @@
                     </li>
                     <!--End mobile Menu-->
                 </ul>
+
+                 <!-- Right navbar links -->
+            @if(count(config('panel.available_languages', [])) > 1)
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        {{ strtoupper(app()->getLocale()) }}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        @foreach(config('panel.available_languages') as $langLocale => $langName)
+                            <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                        @endforeach
+                    </div>
+                </li>
+            </ul>
+        @endif
             </nav>
         </div>
 
