@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Knbah</title>
+    <title>@lang('front.knbah')</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.lineicons.com/1.0.0/LineIcons.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/slicknav.css')}}">
+
+    <meta id="token" name="token" content="{{ csrf_token() }}">
 
 
     @if(app()->getLocale() == 'ar')    
@@ -83,18 +85,18 @@
                             <!--justify-content-center -->
 
                             <li class="nav-item"  id="index">
-                                <a class="nav-link @if (\Request::url() == URL('index')) active @endif" href="{{ URL('index') }}">الرئيسية</a>
+                                <a class="nav-link @if (\Request::url() == URL('index')) active @endif" href="{{ URL('index') }}">@lang('front.home')</a>
                             </li>
 
                             <li class="nav-item"  id="aboutus">
-                                <a class="nav-link @if (\Request::url() == URL('aboutus')) active @endif" href="{{ URL('aboutus') }}">من نحن</a>
+                                <a class="nav-link @if (\Request::url() == URL('aboutus')) active @endif" href="{{ URL('aboutus') }}">@lang('front.about-us')</a>
                             </li>
 
                             <li class="nav-item" id="products">
-                                <a class="nav-link @if (\Request::url() == URL('products')) active @endif" href="{{ URL('products') }}">منتجاتنا</a>
+                                <a class="nav-link @if (\Request::url() == URL('products')) active @endif" href="{{ URL('products') }}">@lang('front.our-products')</a>
                             </li>
                             <li class="nav-item" id="contactusm">
-                                <a class="nav-link @if (\Request::url() == URL('contactus')) active @endif" href="{{ URL('contactus') }}">تواصل معنا</a>
+                                <a class="nav-link @if (\Request::url() == URL('contactus')) active @endif" href="{{ URL('contactus') }}">@lang('front.contact-us')</a>
                             </li>
                         </ul>
 
@@ -102,18 +104,18 @@
                 </div>
                 <ul class="mobile-menu">
                     <li class="activemobile ">
-                        <a href="{{ URL('index') }}" class="activemobile">الرئيسية</a>
+                        <a href="{{ URL('index') }}" class="activemobile">@lang('front.home')</a>
                     </li>
                     <li>
-                        <a href="{{ URL('aboutus') }}">من نحن</a>
+                        <a href="{{ URL('aboutus') }}">@lang('front.about-us')</a>
                     </li>
                     <li>
-                        <a href="{{ URL('products') }}">منتجاتنا </a>
+                        <a href="{{ URL('products') }}">@lang('front.our-products')</a>
                     </li>
 
 
                     <li>
-                        <a href="{{ URL('contact') }}">تواصل معنا </a>
+                        <a href="{{ URL('contact') }}">@lang('front.contact-us')</a>
                     </li>
                     <!--End mobile Menu-->
                 </ul>
@@ -154,8 +156,8 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-mb-12">
                     <div class=" justify-content-center ">
-                        <p class="copy-right">حقوق النشر محفوظة لموقع كنبة 2022</p>
-                        <p class="by">By : Elite Mark</p>
+                        <p class="copy-right">@lang('front.copy-right')</p>
+                        <p class="by">@lang('front.by')</p>
 
                     </div>
                 </div>

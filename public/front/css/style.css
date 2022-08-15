@@ -432,7 +432,10 @@ color:white ;
     border:1px solid #fff;
     color: #fff;
     display: inline-block;
-    margin-top: 35%;
+    /*margin-top: 35%;*/
+    position: absolute;
+    right: 43%;
+    top: 40%;
     
 }
 /**************************************************/

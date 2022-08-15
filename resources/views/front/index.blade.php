@@ -64,7 +64,7 @@
                              {!! Str::limit($about_us->description , 600) !!}
                          </p>
                         <div class="read-more">
-                            <a class="" href="{{ URL('aboutus') }}">اقرأ المزيد</a>
+                            <a class="" href="{{ URL('aboutus') }}">@lang('front.read-more')</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
 
                                 <div class="watsapp-order">
                                     <a href="{{$product->link}}">
-                                        اطلبها من خلال واتس آب
+                                        @lang('front.order-now')
                                         <i class="fab fa-whatsapp"></i>
                                     </a>
                                 </div>
@@ -132,57 +132,6 @@
                     </div>
                 </div>
 
-    {{-- <!-- The Modal -->
-    <div class="modal modal_multi">
-
-        <!-- Modal content -->
-        <div class="modal-content pro-deatails">
-            <span class="close close_multi">×</span>
-            <div class="row">
-                <div class="col-sm-12 col-md-5">
-                    <div class="single-col">
-                        <div class="modal-img">
-                            <img src="{{ $product->image->getUrl() }}" alt="1" width="100%">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-7">
-                    <div class="product-deatails">
-                        <h3 class="product-name">{{$product->title}}</h3>
-                        <div class="product_rating mb-15">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                        </div>
-                        <div class="product-price">
-                            <span class="new-price">${{$product->discounted_price}}</span>
-                            <span class="old-price">${{$product->price}} </span>
-                        </div>
-                        <p class="deatalies"> {!! $product->description !!}</p>
-                        <div class="watsapp-order">
-                                    <a href="{{$product->link}}">
-                                        اطلبها من خلال واتس آب
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>                                    
-                                        </div>
-                        <div class="share">
-                            <span>شاركها مع الأصدقاء</span>
-                            <div class="icon">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </div> --}}
                 @endforeach
 
             </div>
@@ -191,7 +140,7 @@
         <div class="more-products">
             <div class="row">
                 <div class="col-12">
-                    <a href="{{ URL('products') }}">المزيد من المنتجات</a>
+                    <a href="{{ URL('products') }}">@lang('front.more-products')</a>
                 </div>
             </div>
         </div>
@@ -203,7 +152,7 @@
     <div class="Success-Partners section">
         <div class="container">
             <h2 class="title">
-                شركاء النجاح
+@lang('front.partner')
             </h2>
 
             <div class="partner">
@@ -245,19 +194,16 @@
                 </div>
             </div>
             <div class="row">
-
                 @foreach ($portfolios as $portfolio)
-
                 <div class="col-lg-4 col-sm-6">
-                    <div class="previewnail img-responsive">
-                        <a href="#" title="{{$portfolio->title}}"><img
-                                src="{{ $portfolio->image->getUrl('thumb') }}">
+                    <div class="thumbnail img-responsive">
+                        
+                        <a href="#" title="Image 1"><img
+                                src="{{ $portfolio->image->getUrl() }}">
                         </a>
                     </div>
                 </div>
-                    
                 @endforeach
-              
             </div>
         </div>
         <div id="modal" class="modal fade" tabindex="-1" role="dialog">
@@ -276,89 +222,6 @@
     <!---------------------------Image Gellery------------------------------------>
 @endsection
 
-    <!--Call Java Script Files-->
  @section('script')
-
-    <script>
-        // Get the modal
-
-        var modalparent = document.getElementsByClassName("modal_multi");
-
-        // Get the button that opens the modal
-
-        var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
-
-        // Get the <span> element that closes the modal
-        var span_close_multi = document.getElementsByClassName("close_multi");
-
-        // When the user clicks the button, open the modal
-        function setDataIndex() {
-
-            for (i = 0; i < modal_btn_multi.length; i++) {
-                modal_btn_multi[i].setAttribute('data-index', i);
-                modalparent[i].setAttribute('data-index', i);
-                span_close_multi[i].setAttribute('data-index', i);
-            }
-        }
-
-
-
-        for (i = 0; i < modal_btn_multi.length; i++) {
-            modal_btn_multi[i].onclick = function () {
-                var ElementIndex = this.getAttribute('data-index');
-                modalparent[ElementIndex].style.display = "block";
-            };
-
-            // When the user clicks on <span> (x), close the modal
-            span_close_multi[i].onclick = function () {
-                var ElementIndex = this.getAttribute('data-index');
-                modalparent[ElementIndex].style.display = "none";
-            };
-
-        }
-
-        window.onload = function () {
-
-            setDataIndex();
-        };
-
-        window.onclick = function (event) {
-            if (event.target === modalparent[event.target.getAttribute('data-index')]) {
-                modalparent[event.target.getAttribute('data-index')].style.display = "none";
-            }
-
-            // OLD CODE
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-
-        //XXXXXXXXXXXXXXXXXXXXXXX    Modified old code    XXXXXXXXXXXXXXXXXXXXXXXXXX
-
-        // Get the modal
-
-        var modal = document.getElementById('myModal');
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = modal.getElementsByClassName("close")[0]; // Modified by dsones uk
-
-        // When the user clicks on the button, open the modal
-
-        btn.onclick = function () {
-
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-
-
-    </script>
 
 @endsection

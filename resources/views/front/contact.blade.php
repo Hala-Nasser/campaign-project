@@ -14,7 +14,7 @@
             <div class="row">
                 <div class=" col-sm-12 col-md-12 col-lg-12">
                         <h1 class="title">
-                        تواصل معنا
+                    @lang('front.contact-us')
                         </h1>
                 </div>
 
@@ -25,37 +25,37 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-7">
                         <div class="single-col white-bg">
-                            <h4>إملأ بيانات التواصل</h4>
-                            <span>سنقوم بالتواصل معك في غضون يوم عمل </span>
+                            <h4>@lang('front.fill-contact-info')</h4>
+                            <span>@lang('front.will-contact-you')</span>
                             
                             <div class="alert alert-success" role="alert" id="successMsg" style="display: none" >
-                                Thank you for getting in touch! 
+                                @lang('front.success-contact')
                               </div>
                             <form id="SubmitForm">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="name">الاسم</label>
-                                    <input type="text" class="form-control" id="InputName" placeholder="أدخل الاسم الذي تريد التواصل به" name="name">
+                                    <label for="name">@lang('front.name')</label>
+                                    <input type="text" class="form-control" id="InputName" placeholder="@lang('front.name-placeholder')" name="name">
                                     <span class="text-danger" id="nameErrorMsg"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">الايميل</label>
+                                    <label for="email">@lang('front.email')</label>
                                     <input type="email" class="form-control" id="InputEmail" placeholder="info@email.com" name="email">
                                     <span class="text-danger" id="emailErrorMsg"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="messge">الرسالة</label>
-                                    <textarea class="form-control" id="InputMessage" name="message" placeholder="write message here"></textarea>
+                                    <label for="messge">@lang('front.message')</label>
+                                    <textarea class="form-control" id="InputMessage" name="message" placeholder="@lang('front.message-placeholder')"></textarea>
                                     <span class="text-danger" id="messageErrorMsg"></span>                                
                                 </div>
                 
-                                <button type="submit" class="btn btn-primary">إرسال</button>
+                                <button type="submit" class="btn btn-primary">@lang('front.send')</button>
                             </form>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-5">
                         <div class="single-col orange-bg">
-                            <h4>بيانات التواصل</h4>
+                            <h4>@lang('front.contact-info')</h4>
                             <ul class="contact-info-list">
                                 <li>
                                     <i class="fas fa-mobile-alt"></i>

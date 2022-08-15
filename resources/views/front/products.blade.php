@@ -2,6 +2,8 @@
 
 
 @section('style')
+{{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 
 <style type="text/css">
     .modal-content.pro-product-deatails .product-price .old-price{
@@ -32,8 +34,9 @@
             min-height: auto;
             margin: 20px auto;">
                 <div class="row">
-
-                    @foreach ($products as $product)
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                    <div id="post_data"></div>
+                    {{-- @foreach ($products as $product)
 
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="item">
@@ -69,18 +72,19 @@
                         </div>
                     </div>
   
-                    @endforeach
+                    @endforeach --}}
 
                 </div>
 
             </div>
-            <div class="more-products">
+            {{-- <div class="more-products">
                 <div class="row">
-                    <div class="col-12">
-                        <a href="#">المزيد من المنتجات</a>
+                    <div class="col-12"> --}}
+                        {{-- <a href="#" id="load-more">المزيد من المنتجات</a> --}}
+                        {{-- <button class="btn btn-primary" id="load-more" data-paginate="2">Load more...</button>
                     
                     </div>
-                </div>
+                </div> --}}
             </div>
 
         </div>
@@ -92,87 +96,87 @@
 
 @section('script')
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script>
-        // Get the modal
+<script>
+$(document).ready(function(){
+ 
+    var _token = $('input[name="_token"]').val();
+   
+    load_data('', _token);
+   
+    // document.write('load data metho');
+    function load_data(id="", _token)
+    {
 
-        var modalparent = document.getElementsByClassName("modal_multi");
+     $.ajax({
+      url:"{{ route('load') }}",
+      method:"POST",
+      data:{id:id, _token:_token},
+      beforeSend: function(xhr){
+        xhr.setRequestHeader('X-CSRF-TOKEN', $("#token").attr('content'));
+    },
+      success:function(data)
+      {
+        // document.write('suc');
+       $('#load_more_button').remove();
+       $('#post_data').append(data);
+      }
+     })
+     .fail(function(jqXHR, ajaxOptions, thrownError) {
+              alert(jqXHR.statusText);
+           });
+}
+    
 
-        // Get the button that opens the modal
+    // document.write(' after load data metho');
+   
+    $(document).on('click', '#load_more_button', function(){
+     var id = $(this).data('id');
+     $('#load_more_button').html('<b>Loading...</b>');
+     load_data(id, _token);
+    });
+   
+   });
+</script>
 
-        var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        // Get the <span> element that closes the modal
-        var span_close_multi = document.getElementsByClassName("close_multi");
+<script type="text/javascript">
+    var paginate = 1;
+    loadMoreData(paginate);
 
-        // When the user clicks the button, open the modal
-        function setDataIndex() {
-
-            for (i = 0; i < modal_btn_multi.length; i++) {
-                modal_btn_multi[i].setAttribute('data-index', i);
-                modalparent[i].setAttribute('data-index', i);
-                span_close_multi[i].setAttribute('data-index', i);
+    $('#load-more').click(function() {
+        var page = $(this).data('paginate');
+        loadMoreData(page);
+        $(this).data('paginate', page+1);
+    });
+    // run function when user click load more button
+    function loadMoreData(paginate) {
+        $.ajax({
+            url: '?page=' + paginate,
+            type: 'get',
+            datatype: 'html',
+            beforeSend: function() {
+                $('#load-more').text('Loading...');
             }
-        }
-
-
-
-        for (i = 0; i < modal_btn_multi.length; i++) {
-            modal_btn_multi[i].onclick = function () {
-                var ElementIndex = this.getAttribute('data-index');
-                modalparent[ElementIndex].style.display = "block";
-            };
-
-            // When the user clicks on <span> (x), close the modal
-            span_close_multi[i].onclick = function () {
-                var ElementIndex = this.getAttribute('data-index');
-                modalparent[ElementIndex].style.display = "none";
-            };
-
-        }
-
-        window.onload = function () {
-
-            setDataIndex();
-        };
-
-        window.onclick = function (event) {
-            if (event.target === modalparent[event.target.getAttribute('data-index')]) {
-                modalparent[event.target.getAttribute('data-index')].style.display = "none";
-            }
-
-            // OLD CODE
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-
-        //XXXXXXXXXXXXXXXXXXXXXXX    Modified old code    XXXXXXXXXXXXXXXXXXXXXXXXXX
-
-        // Get the modal
-
-        var modal = document.getElementById('myModal');
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = modal.getElementsByClassName("close")[0]; // Modified by dsones uk
-
-        // When the user clicks on the button, open the modal
-
-        btn.onclick = function () {
-
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-
-
-    </script>
+        })
+        .done(function(data) {
+            if(data.length == 0) {
+                $('.invisible').removeClass('invisible');
+                $('#load-more').hide();
+                return;
+              } else {
+                $('#load-more').text('Load more...');
+                $('#post').append(data);
+              }
+        })
+           .fail(function(jqXHR, ajaxOptions, thrownError) {
+              alert('Something went wrong.');
+           });
+    }
+</script> --}}
 
 @endsection
