@@ -27,4 +27,7 @@ return [
     'message-placeholder' => 'اكتب الرسالة هنا',
     'send' => 'إرسال',
     'success-contact' => 'شكرا لك على تواصلك!',
+    
+    //product details
+    'share' => 'شاركها مع الأصدقاء',
 ];

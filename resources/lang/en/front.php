@@ -27,4 +27,7 @@ return [
     'message-placeholder' => 'Enter message here',
     'send' => 'Send',
     'success-contact' => 'Thank you for getting in touch! ',
+
+    //product details
+    'share' => 'share with friends',
 ];

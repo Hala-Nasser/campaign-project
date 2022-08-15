@@ -5,16 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
 
-// Route::get('website/aboutus',[ FrontController::class ,'aboutus'])->name('app.aboutus');
 Route::get('index', [FrontController::class,'index']);
 Route::get('aboutus', [FrontController::class,'aboutus']);
 Route::get('products', [FrontController::class,'ourProducts']);
 Route::get('product/details/{id}', [FrontController::class,'productDetails']);
 Route::get('contactus', [FrontController::class,'contactUsIndex']);
 Route::post('contact/store', [FrontController::class,'contactUsStore']);
-// Route::get('post', [FrontController::class, 'post'])->name('post');
-Route::get('loadmore', [FrontController::class, 'index_load_more']);
-Route::post('loadmore/load_data', [FrontController::class, 'load_data'])->name('load');
 
 Route::get('/home', function () {
     if (session('status')) {
