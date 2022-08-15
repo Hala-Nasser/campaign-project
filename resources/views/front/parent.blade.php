@@ -60,10 +60,27 @@
                     <div class="col-lg-7 col-md-5 col-sm-12">
                         <ul class="support">
                             <li>
-                                <a href="tel:{{$about->phone}}"><i class="lni-phone"></i>{{$about->phone}}</a>
+                                <a href="tel:@if($about == null)
+                                970567070203+
+                                @else
+                                {{$about->phone}}
+                                @endif"><i class="lni-phone"></i>
+                                @if($about == null)
+                                970567070203+
+                                @else
+                                {{$about->phone}}
+                                @endif</a>
                             </li>
                             <li>
-                                <a href="{{$about->phone}}"><i class="lni-envelope"></i>{{$about->email}}</a>
+                                <a href="@if($about == null)
+                                kanaba@gmail.com
+                                @else
+                                {{$about->email}}
+                                @endif"><i class="lni-envelope"></i>@if($about == null)
+                                kanaba@gmail.com
+                                @else
+                                {{$about->email}}
+                                @endif</a>
                             </li>
                         </ul>
                     </div>
@@ -77,7 +94,11 @@
                 <div class="container">
 
                     <div class="logo">
+                        @if($about == null)
+                        <img src="{{ asset('images/logo.png') }}" alt="logo">
+                        @else
                         <img src="{{ $about->logo->getUrl() }}" alt="logo">
+                        @endif
                     </div>
                     <div class="navbar-header"></div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -18,13 +18,21 @@ class FrontController extends Controller
     public function index()
     {
         $pages = Page::all();
-        $slider1 = $pages[2];
-        $slider2 = $pages[3];
-        $slider3 = $pages[4];
+        // $slider1 = $pages[2];
+        // $slider2 = $pages[3];
+        // $slider3 = $pages[4];
 
-        $about_us = $pages[0];
+        // $about_us = $pages[0];
 
-        $our_products_page = $pages[1];
+        // $our_products_page = $pages[1];
+
+        $slider1 = null;
+        $slider2 = null;
+        $slider3 = null;
+
+        $about_us = null;
+
+        $our_products_page = null;
         $products = Product::orderBy('created_at', 'desc')
             ->take(3)
             ->get();

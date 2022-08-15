@@ -59,15 +59,33 @@
                             <ul class="contact-info-list">
                                 <li>
                                     <i class="fas fa-mobile-alt"></i>
-                                    <span class="phon-number">{{$about->phone}}</span>
+                                    <span class="phon-number">
+                                        @if($about == null)
+                                      970567070203+
+                                      @else
+                                      {{$about->phone}}
+                                      @endif
+                                    </span>
                                 </li>
                                 <li>
                                     <i class="far fa-envelope"></i>
-                                    <span>{{$about->email}}</span>
+                                    <span>
+                                      @if($about == null)
+                                      kanaba@gmail.com
+                                      @else
+                                      {{$about->email}}
+                                      @endif
+                                    </span>
                                 </li>
                                 <li>
                                     <i class="fas fa-globe"></i>
-                                    <span>{{$about->website}}</span>
+                                    <span>
+                                        @if($about == null)
+                                        knbah.co
+                                      @else
+                                      {{$about->website}}
+                                      @endif
+                                    </span>
                                 </li>
     
                             </ul>

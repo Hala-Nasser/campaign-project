@@ -23,8 +23,20 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-header">
-                    <h1 class="title">{{$our_products_page->title}}</h1>
-                    <p>{{$our_products_page->description}}</p>
+                    <h1 class="title">
+                        @if($our_products_page == null)
+                            @lang('dummy-data.products-title')
+                        @else
+                            {{$our_products_page->title}}
+                        @endif
+                    </h1>
+                    <p>
+                        @if($our_products_page == null)
+                            @lang('dummy-data.products-description')
+                        @else
+                        {{$our_products_page->description}}
+                        @endif
+                        </p>
                 </div>
             </div>
         </div>
