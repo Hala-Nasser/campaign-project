@@ -39,9 +39,11 @@
                 <img src="{{ asset('images/product.jpeg') }}" alt="">
                 <div class="labelSale">-7%</div>
                 <div class="img-overlay">
-                    <button class="myBtn_multi">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    <a href="{{ URL('product/details/' . '0' ) }}" style="additive-symbols: ">
+                        <button class="myBtn_multi">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="dealProductInfo">
@@ -69,9 +71,11 @@
                 <img src="{{ asset('images/product.jpeg') }}" alt="">
                 <div class="labelSale">-7%</div>
                 <div class="img-overlay">
-                    <button class="myBtn_multi">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    <a href="{{ URL('product/details/' . '0' ) }}" style="additive-symbols: ">
+                        <button class="myBtn_multi">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="dealProductInfo">
@@ -99,9 +103,11 @@
                 <img src="{{ asset('images/product.jpeg') }}" alt="">
                 <div class="labelSale">-7%</div>
                 <div class="img-overlay">
-                    <button class="myBtn_multi">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    <a href="{{ URL('product/details/' . '0' ) }}" style="additive-symbols: ">
+                        <button class="myBtn_multi">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="dealProductInfo">
@@ -129,9 +135,11 @@
                 <img src="{{ asset('images/product.jpeg') }}" alt="">
                 <div class="labelSale">-7%</div>
                 <div class="img-overlay">
-                    <button class="myBtn_multi">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    <a href="{{ URL('product/details/' . '0' ) }}" style="additive-symbols: ">
+                        <button class="myBtn_multi">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="dealProductInfo">
@@ -159,9 +167,11 @@
                 <img src="{{ asset('images/product.jpeg') }}" alt="">
                 <div class="labelSale">-7%</div>
                 <div class="img-overlay">
-                    <button class="myBtn_multi">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    <a href="{{ URL('product/details/' . '0' ) }}" style="additive-symbols: ">
+                        <button class="myBtn_multi">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="dealProductInfo">

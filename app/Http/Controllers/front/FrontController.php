@@ -9,7 +9,7 @@ use App\Models\Partner;
 use App\Models\Portfolio;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Str;
 
 class FrontController extends Controller
 {
@@ -18,21 +18,16 @@ class FrontController extends Controller
     public function index()
     {
         $pages = Page::all();
-        // $slider1 = $pages[2];
-        // $slider2 = $pages[3];
-        // $slider3 = $pages[4];
+        $slider1 = $pages[2];
+        $slider2 = $pages[3];
+        $slider3 = $pages[4];
 
-        // $about_us = $pages[0];
+        $about_us = $pages[0];
+        $about_us->description_en = Str::limit($about_us->description_en , 600);
+        $about_us->description_ar = Str::limit($about_us->description_ar , 600);
 
-        // $our_products_page = $pages[1];
+        $our_products_page = $pages[1];
 
-        $slider1 = null;
-        $slider2 = null;
-        $slider3 = null;
-
-        $about_us = null;
-
-        $our_products_page = null;
         $products = Product::orderBy('created_at', 'desc')
             ->take(3)
             ->get();
@@ -65,8 +60,6 @@ class FrontController extends Controller
 
     public function productDetails($id)
     {
-        $product = Product::find($id);
-
         $shareComponent = \Share::page(
             URL('product/details/' . $id),
             'hala share',
@@ -77,7 +70,17 @@ class FrontController extends Controller
             ->telegram()
             ->whatsapp()
             ->reddit();
+
+        if($id != 0){
+            $product = Product::find($id);
+            return view('front.product-details')->with('product', $product)->with('shareComponent', $shareComponent);
+        }
+        $product = null;
         return view('front.product-details')->with('product', $product)->with('shareComponent', $shareComponent);
+
+        
+
+        
     }
 
     public function contactUsIndex()

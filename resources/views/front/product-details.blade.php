@@ -48,13 +48,23 @@
                     <div class="col-sm-12 col-md-5">
                         <div class="single-col">
                             <div class="modal-img">
+                                @if($product != null)
                                 <img src="{{ $product->image->getUrl() }}" alt="1" width="100%">
+                                @else
+                                <img src=" {{ asset('images/product.jpeg') }}" alt="1" width="100%">
+                                @endif
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-7">
                         <div class="product-deatails">
-                            <h3 class="product-name">{{$product->title}}</h3>
+                            <h3 class="product-name">
+                                @if($product != null)
+                                {{$product->title}}
+                                @else
+                                @lang('dummy-data.product-title')
+                                @endif
+                            </h3>
                             <div class="product_rating mb-15">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -63,15 +73,39 @@
                                 <i class="fa fa-star" aria-hidden="true"></i>
                             </div>
                             <div class="product-price">
-                                <span class="new-price">${{$product->discounted_price}}</span>
-                                <span class="old-price">${{$product->price}} </span>
+                                <span class="new-price">
+                                    @if($product != null)
+                                    ${{$product->discounted_price}}
+                                    @else
+                                    $80.00
+                                    @endif
+                                    </span>
+                                <span class="old-price">
+                                    @if($product != null)
+                                    ${{$product->price}} 
+                                    @else
+                                    $86.00
+                                    @endif
+                                </span>
                             </div>
-                            <p class="deatalies"> {!! $product->description !!}</p>
+                            <p class="deatalies"> 
+                                @if($product != null)
+                                {!! $product->description !!}
+                                    @else
+                                    @lang('dummy-data.product-description')
+                                    @endif
+                                </p>
                             <div class="watsapp-order">
+                                @if($product != null)
                                 <a href="{{$product->link}}">
                                     @lang('front.order-now')
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
+                                @else
+                                <a href="#">
+                                    @lang('front.order-now') <i class="fab fa-whatsapp"></i>
+                                </a>
+                                @endif
                             </div>
                             <div class="share" style="text-align: start;">
                                 <span style="display: inline;">@lang('front.share')</span>
